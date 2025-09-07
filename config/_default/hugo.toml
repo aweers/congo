@@ -25,3 +25,16 @@ summaryLength = 0
 [services]
   [services.x]
     disableInlineCSS = true
+
+
+[markup.goldmark.renderer]
+  # This is required by the passthrough extension
+  unsafe = true
+
+[markup.goldmark.extensions]
+  # This extension allows you to pass raw HTML and other content directly to the output.
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block = [['$$', '$$']]
+      inline = [['$', '$']]
